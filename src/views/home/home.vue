@@ -22,7 +22,6 @@
       <transition name="fade">
         <right-aside v-if="show" transiton="fade" :propsObj="propsObj"></right-aside>
       </transition>
-
       <nav-footer></nav-footer>
     </div>
   </div>
