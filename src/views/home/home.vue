@@ -1,29 +1,26 @@
 <template>
-    <div>
-      <nav-header></nav-header>
+  <div>
+    <nav-header></nav-header>
+    <div class="center_main clearfix">
       <left-aside></left-aside>
-      <div class="center_main clearfix">
-        <div class="center_body">
-          <ul class="home-list-ul">
-            <li v-for="item in textList">
-              <router-link :to="{path:'/detail',query:{'id': item.textId }}"><h4 class="text-title">{{ item.title }}</h4></router-link>
-              <div class="text-info clearfix">
-                <span><a href="javascript:;" @click="showRightSide(item.textId)" class="glyphicon glyphicon-list-alt"></a></span>
-                <span>{{ item.updateTime }}</span>
-                <span><router-link to="">{{ item.label}}</router-link></span>
-                <span>阅读数：{{ item.readNum }}</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="right_cont_loading" @click="hideRightSide" v-show="show"></di v>
+      <div class="center_body">
+        <ul class="home-list-ul">
+          <li v-for="item in textList">
+            <router-link :to="{path:'/detail',query:{'id': item.textId }}"><h4 class="text-title">{{ item.title }}</h4></router-link>
+            <div class="text-info clearfix">
+              <span><a href="javascript:;" @click="showRightSide(item.textId)" class="glyphicon glyphicon-list-alt"></a></span>
+              <span>{{ item.updateTime }}</span>
+              <span><router-link to="">{{ item.label}}</router-link></span>
+              <span>阅读数：{{ item.readNum }}</span>
+            </div>
+          </li>
+        </ul>
       </div>
-
-      <transition name="fade">
-        <right-aside v-if="show" transiton="fade" :propsObj="propsObj"></right-aside>
-      </transition>
-      <nav-footer></nav-footer>
+      <div class="right_cont_loading" @click="hideRightSide" v-show="show"></div>
     </div>
+    <transition name="fade">
+      <right-aside v-if="show" transiton="fade" :propsObj="propsObj"></right-aside>
+    </transition>
   </div>
 </template>
 
@@ -82,12 +79,10 @@
 
 <style lang="scss">
   .center_main {
-    position: fixed;
-    top: 70px;
+    margin-top: 60px;
     padding-top: 10px;
     left:0;
     right: 0;
-    overflow: auto;
     bottom: 0;
     padding-left: 330px;
     .center_body {

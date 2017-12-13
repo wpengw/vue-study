@@ -1,5 +1,5 @@
 <template>
-  <aside>
+  <div>
     <!--<div class="left-aside-top"></div>-->
     <div class="left-aside">
       left
@@ -7,7 +7,7 @@
         <div class="scroller_handle"></div>
       </div>
     </div>
-  </aside>
+  </div>
 
 </template>
 
@@ -57,7 +57,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 4;
+    z-index: 0;
     color: #545e66;
     width: 280px;
     /*border: 1px solid gray;*/

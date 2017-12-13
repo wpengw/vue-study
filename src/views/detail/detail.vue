@@ -11,7 +11,6 @@
         <p class="text-body">{{ detailInfo.content }}</p>
       </article>
     </div>
-    <nav-footer></nav-footer>
   </div>
 </template>
 

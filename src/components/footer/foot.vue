@@ -15,7 +15,7 @@
       }
     },
     mounted() {
-      this.init();
+      // this.init();
     },
     methods: {
       init() {
@@ -34,11 +34,12 @@
 </script>
 
 <style lang="scss">
-  .fixed-bottom {
-    position: fixed;
-    bottom: 0;
-    z-index: 1000;
-  }
+  // .fixed-bottom {
+  //   position: fixed;
+  //   bottom: 0;
+  //   left: 0;
+  //   z-index: 1000;
+  // }
   .footer {
     width: 100%;
     background-color: rgba(0,0,0,0.8);
