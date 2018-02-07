@@ -19,8 +19,7 @@
   import 'bootstrap'
   import NavHeader from '@/components/header/head';
   import NavFooter from '@/components/footer/foot';
-  import axios from 'axios';
-  import { url } from '@/config/config'
+  import api from '@/assets/js/api';
 
   export default {
     data() {
@@ -38,16 +37,12 @@
     methods: {
       init() {
         let textId = this.$route.query.id;
-        console.log(textId);
-        axios.get(url + 'detail', {
-          params: {
-            textId: textId
+        api.getTextDetail({textId: textId}).then(res => {
+          if(res.status == '0') {
+            this.detailInfo = res.result;
+          } else {
+            alert(res.msg);
           }
-        }).then(response => {
-          let res = response.data;
-          this.detailInfo = res.result;
-        }).catch(err => {
-          console.log(err);
         })
       }
     }

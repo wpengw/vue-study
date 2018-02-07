@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import 'jquery'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -14,6 +15,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App }
+  store,
+  render: h => h(App)
 })

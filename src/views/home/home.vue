@@ -2,7 +2,6 @@
   <div>
     <nav-header></nav-header>
     <div class="center_main clearfix">
-      <left-aside></left-aside>
       <div class="center_body">
         <ul class="home-list-ul">
           <li v-for="item in textList">
@@ -31,8 +30,7 @@
   import NavFooter from '@/components/footer/foot';
   import LeftAside from '@/components/aside/leftSide';
   import RightAside from '@/components/aside/rightSide';
-  import axios from "axios";
-  import { url } from "@/config/config";
+  import api from '@/assets/js/api';
 
   export default {
     data() {
@@ -57,11 +55,12 @@
     },
     methods: {
       init() {
-        axios.get(url).then(response => {
-          let res = response.data;
-          this.textList = res.result;
-        }).catch(err => {
-          console.log(err);
+        api.getTextList().then(res => {
+          if(res.status == '0') {
+            this.textList = res.result;
+          } else {
+            alert(res.msg);
+          }
         })
       },
       showRightSide(id) {
@@ -79,14 +78,15 @@
 
 <style lang="scss">
   .center_main {
-    margin-top: 60px;
     padding-top: 10px;
     left:0;
     right: 0;
     bottom: 0;
-    padding-left: 330px;
+    width: 1100px;
+    margin: 60px auto;
     .center_body {
-       max-width: 1000px;
+       width: 700px;
+       float:left;
     }
     .right_cont_loading {
       position: fixed;
@@ -97,7 +97,7 @@
       height: 100%;
     }
     .home-list-ul {
-      width: 90%;
+      width: 100%;
     }
     .home-list-ul li{
       padding: 10px;

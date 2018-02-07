@@ -15,12 +15,12 @@ button {border:0 none;background-color:transparent;cursor:pointer}  /* 重置表
 body {background:#fff;}   /* 重置body 页面背景为白色 */
 body,th,td,input,select,textarea,button {font-size:14px;line-height:1 ;font-family:"微软雅黑", "黑体","宋体";} /* 重置页面文字属性 */
 a {color:#666;text-decoration:none}  /* 重置链接a标签 */
-a:active, a:hover {text-decoration:none}   /* 重置链接a标签的鼠标滑动效果 */
+a:active, a:hover {text-decoration:none;}   /* 重置链接a标签的鼠标滑动效果 */
 address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}  /* 重置样式标签的样式 */
 caption {display:none;}    /* 重置表格标题为隐藏 */
 table {width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}    /* 重置table属性 */
 img{max-width: 100%; height: auto;}
-body,html {height: 100%;padding-bottom:50px;}
+body,html {height: 100%;padding-bottom:50px;background-color: #f5f6f7;}
 
 
 /* 页面设置 */
